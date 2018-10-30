@@ -17,17 +17,13 @@ app.use((req, res, next) => {
   });
 
   
-
-
-
-
 app.get('/', (req, res) => {
     res.send('Hello World')
   })
 
 app.post("/chores", (req, res) => {
 
-    let chore = new Chore(req.body.choreName)
+    let chore = new Chore(req.body.title, req.body.priority, req.body.dateCreated, req.body.isComplete, req.body.dateCompleted)
     chores.push(chore)
 
     res.send("New chore added")
@@ -37,6 +33,9 @@ app.post("/chores", (req, res) => {
   app.get('/chores', (req, res) => {
     res.json(chores)
 })
+
+
+
 
   app.listen(port, () => {
     console.log("server started");

@@ -1,6 +1,10 @@
 class Chore {
-    constructor(choreName) {
-        this.choreName = choreName
+    constructor(title, priority, dateCreated, dateCompleted, isCompleted) {
+        this.title = title
+        this.priority = priority
+        this.dateCreated = new Date()
+        this.dateCompleted = dateCompleted
+        this.isComplete = false
     }
 }
 
